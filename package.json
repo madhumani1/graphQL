@@ -1,0 +1,24 @@
+{
+  "name": "manimad-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.platform.manulife.io:2222/mu-can-kw-31/manimad-graphql.git"
+  },
+  "keywords": [],
+  "author": "Madhu Mani",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.17.0",
+    "dataloader": "^2.0.0",
+    "graphql": "^15.3.0",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.4"
+  }
+}
