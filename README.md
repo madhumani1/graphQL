@@ -1000,6 +1000,39 @@ This is where we'll pass in the DataLoader to be used by the resolvers.
      }
    }
    ```
+   ```
+mutation {
+  createAppointment(
+    input: { patientId: "5", doctorId: "4", date: "2020-07-21" }
+  ) {
+    appointment {
+      id
+      date
+      patientId
+      doctorId
+    }
+  }
+}
+
+query {
+  patient(id: "5") {
+    id
+    name
+    doctors {
+      id
+      name
+    }
+  }
+  doctor(id: "1") {
+    id
+    name
+    patient {
+      id
+      name
+    }
+  }
+}
+   ```
 
 ## Deploying to PCF
 

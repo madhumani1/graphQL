@@ -1,34 +1,32 @@
+//schema definition goes here
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
-  type Query {
-        """
-            A Hello World example
-        """
+    type Query {
         message: String
         patient(id: ID!): Patient
         doctor(id: ID!): Doctor
     }
 
     type Patient {
-        id: ID
-        name: String
+        id: ID!
+        name: String!
         doctors: [Doctor]
     }
 
     type Doctor {
-        id: ID
+        id: ID!
         name: String
         patients: [Patient]
     }
 
     type Mutation {
-        createAppointment(input: CreateAppointmentRequest!): CreateAppointmentResponse
+        createAppointment(input: CreateAppointmentRequest!):CreateAppointmentResponse
     }
 
     input CreateAppointmentRequest {
-        patient_id: ID!
-        doctor_id: ID!
+        patientId: ID!
+        doctorId: ID!
         date: String
     }
 
@@ -37,16 +35,19 @@ const typeDefs = gql`
     }
 
     type Appointment {
-        id: ID
-        patient_id: String
-        doctor_id: String
+        id: ID!
+        patientId: String
+        doctorId: String
         date: String
     }
+`;
+
+// for Mutation
+// Goal: Create an appointment for a patient with a doctor and a
+    // date for that appointment. You can try this appointment addition
+    // in-memory (not with REST APIs, as this is not supported by the API yet).
+    // 1. In typeDefs.js, add a Mutation type.
 
 
 
-  `;
-
-  
-
-  module.exports = typeDefs;
+module.exports = typeDefs;
