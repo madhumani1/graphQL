@@ -94,6 +94,7 @@ const Patient = {
 const Doctor = {
     patients: async ({id}) => {
         const visits = await fetch(`${API_URL}/visit/doctor/${id}`).then((res) => res.json() );
+        console.log('visits: ',visits); // observe the shape of the return value
         return Promise.all(visits.map(({patientId}) =>
         fetch(`${API_URL}/patient/${patientId}`)
             .then((res) => res.json()))

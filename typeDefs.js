@@ -36,8 +36,8 @@ const typeDefs = gql`
 
     type Appointment {
         id: ID!
-        patientId: String
-        doctorId: String
+        patientId: ID
+        doctorId: ID
         date: String
     }
 `;
