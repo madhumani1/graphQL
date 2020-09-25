@@ -202,7 +202,7 @@ We've defined the start of our schema, but Apollo Server doesn't know what to re
 
 1. Run the query again in GraphQL Playground and you should get back your "Hello World" message.
 
-   ![Image](./1-hello-world/result.png)
+   ![Image](screenshots/result.png)
 
    Query
 
